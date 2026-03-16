@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fruit Grid</title>
+
+<style>
+
+body{
+    margin:40px;
+    font-family: Arial;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:20px;
+    max-width:900px;
+}
+
+.container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* watermelon image */
+.big{
+    grid-row: span 2;
+}
+
+/* grapefruit image */
+.wide{
+    grid-column: span 2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="https://static.toiimg.com/thumb/64700217.cms?width=1200&height=900">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRXKcGr0rnAeasxCbSBGSPlWo8rOGnTJM7hQ&s">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWFnBY4NgOgYFrvU7l1bCAlDWfMjTAcCWyJg&s" class="big">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEW9CEIXhOjP1UlDhQz_wkdi1E6awAyi1fsg&s" class="wide">
+
+<img src="https://www.haridwarmart.com/wp-content/uploads/2019/11/haridwar-mart-papaya.png">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG7SxOWYbcQgZG35EOPOKfLRL_GoY_F-QwFA&s">
+
+</div>
+
+</body>
+</html>

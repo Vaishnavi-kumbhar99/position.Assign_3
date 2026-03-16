@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment2.15</title>
+    <style>
+        .navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#333;
+padding:15px 20px;
+color:white;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+
+.menu{
+display:flex;
+list-style:none;
+}
+
+.menu li{
+margin-left:20px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+}
+
+.menu-icon{
+display:none;
+font-size:25px;
+cursor:pointer;
+}
+
+#menu-toggle{
+display:none;
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+.menu{
+display:none;
+flex-direction:column;
+width:100%;
+background:#333;
+}
+
+.menu li{
+margin:10px 0;
+text-align:center;
+}
+
+.menu-icon{
+display:block;
+}
+
+#menu-toggle:checked + .menu-icon + .menu{
+display:flex;
+}
+
+}
+    </style>
+</head>
+<body>
+    <header>
+<nav class="navbar">
+
+<div class="logo">MyLogo</div>
+
+<input type="checkbox" id="menu-toggle">
+
+<label for="menu-toggle" class="menu-icon">
+...
+</label>
+
+<ul class="menu">
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</nav>
+</header>
+</body>
+</html>

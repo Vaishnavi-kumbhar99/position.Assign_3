@@ -1,0 +1,90 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Column Layout.assignmen2.9</title>
+<style>
+/* Basic Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+/* Container with Flex */
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar{
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+/* Sidebar menu items */
+.sidebar h2{
+    margin-bottom: 20px;
+}
+
+.sidebar ul{
+    list-style-type: none;
+}
+
+.sidebar ul li{
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover{
+    background-color: #444;
+}
+
+/* Content Area */
+.content{
+    flex: 1; 
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px){
+    .container{
+        flex-direction: column; 
+    }
+    .sidebar{
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h1>Main Content Area</h1>
+        <p>This is the content section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id magna et lacus varius fermentum.</p>
+        <p>Add more content here as needed.</p>
+    </div>
+</div>
+
+</body>
+</html>

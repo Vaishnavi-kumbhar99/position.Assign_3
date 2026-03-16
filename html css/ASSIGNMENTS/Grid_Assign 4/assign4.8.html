@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>responsive CSS grid · navbar · content · footer</title>
+  <style>
+    /* minimalist reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    /* main grid container — matches the schema:
+       NAVBAR (full width)
+       three CONTENTS in a row (CONTENT 1,2,3)
+       MAIN (full width row)
+       FOOTER (full width row)
+    */
+    .grid-layout {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-areas: 
+        "navbar    navbar    navbar"
+        "content1  content2  content3"
+        "main      main      main"
+        "footer    footer    footer";
+      grid-template-columns: 1fr 1fr 1fr;  /* three equal columns for content row */
+      gap: 1.25rem;
+      background-color: white;
+      padding: 1.8rem;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -8px rgba(0,0,0,0.2);
+      border: 1px solid #e2e8f0;
+    }
+
+    /* all grid items share clean card style */
+    .grid-layout > * {
+      background: #ffffff;
+      padding: 1.6rem 1.2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #dee7ef;
+      text-align: center;
+      font-weight: 500;
+      transition: all 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      word-break: break-word;
+    }
+
+    /* distinct pastel backgrounds (soft, but readable) */
+    .navbar {
+      grid-area: navbar;
+      background: #dbeafe;      /* light blue */
+      color: #1e3a8a;
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid #b3d0ff;
+    }
+
+    /* content blocks */
+    .content1 {
+      grid-area: content1;
+      background: #fef9c3;      /* soft yellow */
+      color: #854d0e;
+      font-size: 1.2rem;
+    }
+    .content2 {
+      grid-area: content2;
+      background: #f1d7fa;      /* lavender */
+      color: #581c87;
+      font-size: 1.2rem;
+    }
+    .content3 {
+      grid-area: content3;
+      background: #c7e9d0;      /* seafoam */
+      color: #14532d;
+      font-size: 1.2rem;
+    }
+
+    /* main panel */
+    .main {
+      grid-area: main;
+      background: #fae8ff;      /* light magenta */
+      color: #701a75;
+      font-size: 1.5rem;
+      font-weight: 550;
+      padding: 2rem 1.2rem;
+      border: 2px dashed #d8b4fe;
+    }
+
+    /* footer */
+    .footer {
+      grid-area: footer;
+      background: #d9d9d9;      /* neutral grey */
+      background: #e9e4e0;
+      color: #3c2a1f;
+      font-size: 1.3rem;
+      font-weight: 500;
+      border-top: 3px solid #c0b7b0;
+    }
+
+    /* extra style for the bullet list items (CONTENT 1,2,3) */
+    .content1::before,
+    .content2::before,
+    .content3::before {
+      content: "• ";
+      font-size: 2rem;
+      line-height: 1;
+      vertical-align: middle;
+      color: inherit;
+      font-weight: 400;
+      margin-right: 4px;
+    }
+
+    /* preserve original look for navbar/main/footer (no bullets) */
+    .navbar::before,
+    .main::before,
+    .footer::before {
+      content: none;
+    }
+
+    /* make the three content blocks a bit more spacious */
+    .grid-layout .content1,
+    .grid-layout .content2,
+    .grid-layout .content3 {
+      font-size: 1.3rem;
+      padding: 2rem 0.5rem;
+    }
+
+    /* ===== responsive breakpoint ===== 
+       below 640px: stack everything in one column,
+       exactly as "responsive grid" implies.
+    */
+    @media screen and (max-width: 640px) {
+      .grid-layout {
+        grid-template-areas: 
+          "navbar"
+          "content1"
+          "content2"
+          "content3"
+          "main"
+          "footer";
+        grid-template-columns: 1fr;   /* single column */
+        gap: 1rem;
+        padding: 1.2rem;
+      }
+
+      /* adjust font sizes slightly for mobile */
+      .navbar {
+        font-size: 1.6rem;
+        padding: 1.2rem;
+      }
+      .content1, .content2, .content3 {
+        font-size: 1.4rem;
+        padding: 1.2rem;
+        justify-content: flex-start;  /* left align bullet + text */
+        padding-left: 2rem;
+      }
+      .main {
+        font-size: 1.6rem;
+        padding: 1.5rem;
+      }
+      .footer {
+        font-size: 1.5rem;
+        padding: 1.2rem;
+      }
+
+      /* optional: remove big extra bullets on mobile, keep them subtle */
+      .content1::before,
+      .content2::before,
+      .content3::before {
+        font-size: 1.8rem;
+        margin-right: 8px;
+      }
+    }
+
+    /* optional: very small fine-tune for long words */
+    @media (max-width: 380px) {
+      .grid-layout > * {
+        font-size: 1rem;
+        padding: 1rem 0.4rem;
+      }
+      .navbar { font-size: 1.2rem; }
+    }
+
+    /* mimic the "dash list" from the screenshot: 
+       "CONTENT 1" etc. – but we also keep a clean look */
+    .grid-layout .navbar,
+    .grid-layout .main,
+    .grid-layout .footer {
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    /* optionally show that content blocks are listed with dashes in mind? 
+       screenshot shows "CONTENT 1" with a leading dash, but we use • for better readability.
+       if you prefer a simple hyphen, we can adjust. I'll keep the bullet but style it like a dash.
+       actually the description says "CONTENT 1 – CONTENT 2 – CONTENT 3" with dashes. 
+       I'll make the bullet look like a short dash (–) using pseudo */
+    .content1::before,
+    .content2::before,
+    .content3::before {
+      content: "—\00A0";  /* em-dash + non-breaking space — closer to the screenshot style */
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-right: 5px;
+      color: currentColor;
+      opacity: 0.8;
+    }
+
+    /* but ensure the bullet/dash does not double on very small screens */
+    @media screen and (max-width: 640px) {
+      .content1::before,
+      .content2::before,
+      .content3::before {
+        font-size: 1.5rem;
+        content: "—\00A0";
+      }
+    }
+
+    /* subtle hover effect (just for fun) */
+    .grid-layout > *:hover {
+      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.2);
+      transform: scale(1.005);
+      border-color: #b9c9fa;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="grid-layout">
+    <div class="navbar">NAVBAR</div>
+    <div class="content1">CONTENT 1</div>
+    <div class="content2">CONTENT 2</div>
+    <div class="content3">CONTENT 3</div>
+    <div class="main">MAIN</div>
+    <div class="footer">FOOTER</div>
+  </div>
+
+  <!-- additional footnote (just to match the "ONLY HTML & CSS" mention,
+       but does not interfere with grid) -->
+</body>
+</html>

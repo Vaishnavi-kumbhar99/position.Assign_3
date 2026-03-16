@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Natural Ice Cream</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    font-family: Arial;
+}
+
+/* Hero Section */
+.hero{
+    background-image:url("https://images.unsplash.com/photo-1563805042-7684c019e1cb");
+    background-size:cover;
+    background-position:center;
+    height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:60px;
+    font-weight:bold;
+}
+
+/* cards */
+.card img{
+    height:250px;
+    object-fit:cover;
+}
+
+footer{
+    background:#222;
+    color:white;
+    padding:20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">Natural IceCream</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#flavours">Flavours</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#special">Special</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#order">Order</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div>
+
+<h1>Natural Ice Cream</h1>
+
+<p>100% Natural | Fresh Fruits | No Chemicals</p>
+
+<button class="btn btn-warning btn-lg">Order Now</button>
+
+</div>
+
+</section>
+
+
+<!-- Flavours Section -->
+
+<section class="container mt-5" id="flavours">
+
+<h2 class="text-center mb-4">Our Flavours</h2>
+
+<div class="row">
+
+<!-- Mango -->
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI2mfiuh93uNgp-cCfASnwvm4NkmXUKaMFmg&s" class="card-img-top">
+
+<div class="card-body">
+
+<h5>Mango Ice Cream</h5>
+
+<p>Made with real Alphonso mango pulp.</p>
+
+<button class="btn btn-success">Order</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Chocolate -->
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307" class="card-img-top">
+
+<div class="card-body">
+
+<h5>Chocolate Ice Cream</h5>
+
+<p>Rich creamy chocolate flavour loved by everyone.</p>
+
+<button class="btn btn-success">Order</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Strawberry -->
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc" class="card-img-top">
+<div class="card-body">
+
+<h5>Strawberry Ice Cream</h5>
+
+<p>Fresh strawberries blended with milk.</p>
+
+<button class="btn btn-success">Order</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Specialization -->
+
+<section class="container mt-5" id="special">
+
+<h2 class="text-center mb-4">Our Specialization</h2>
+
+<div class="row text-center">
+
+<div class="col-md-3">
+<h4>100% Natural</h4>
+<p>No artificial colors or chemicals.</p>
+</div>
+
+<div class="col-md-3">
+<h4>Fresh Fruits</h4>
+<p>Ice cream made from real fruits.</p>
+</div>
+
+<div class="col-md-3">
+<h4>Best Quality Milk</h4>
+<p>Premium dairy products used.</p>
+</div>
+
+<div class="col-md-3">
+<h4>Affordable Price</h4>
+<p>Delicious ice cream at best price.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Order Section -->
+
+<section class="container mt-5 mb-5" id="order">
+
+<h2 class="text-center mb-4">Order Now</h2>
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6">
+<input type="text" class="form-control mb-3" placeholder="Your Name">
+</div>
+
+<div class="col-md-6">
+<input type="email" class="form-control mb-3" placeholder="Your Email">
+</div>
+
+</div>
+
+<input type="text" class="form-control mb-3" placeholder="Ice Cream Flavour">
+
+<textarea class="form-control mb-3" placeholder="Address"></textarea>
+
+<button class="btn btn-primary">Place Order</button>
+
+</form>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer class="text-center">
+
+<p>© 2026 Natural Ice Cream | Made with ❤️</p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

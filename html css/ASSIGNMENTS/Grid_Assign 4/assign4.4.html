@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard Layout</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+}
+
+/* Grid Container */
+
+.container{
+    display:grid;
+    grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+    
+    grid-template-columns:200px 1fr 200px;
+    grid-template-rows:80px 1fr 60px;
+    height:100vh;
+    gap:10px;
+    padding:10px;
+}
+
+/* Sections */
+
+.header{
+    grid-area:header;
+    background:#3498db;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.nav{
+    grid-area:nav;
+    background:#2ecc71;
+    color:white;
+    padding:20px;
+}
+
+.main{
+    grid-area:main;
+    background:#f1c40f;
+    padding:20px;
+}
+
+.aside{
+    grid-area:aside;
+    background:#9b59b6;
+    color:white;
+    padding:20px;
+}
+
+.footer{
+    grid-area:footer;
+    background:#34495e;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<h2>Header</h2>
+</div>
+
+<div class="nav">
+<h3>Navigation</h3>
+<p>Dashboard</p>
+<p>Profile</p>
+<p>Settings</p>
+</div>
+
+<div class="main">
+<h2>Main Content</h2>
+<p>This is the dashboard main area.</p>
+</div>
+
+<div class="aside">
+<h3>Aside</h3>
+<p>Notifications</p>
+<p>Updates</p>
+</div>
+
+<div class="footer">
+<p>Footer</p>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid · header · nav · 3 cols · footer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f6fa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    /* main grid container — matches the schema exactly:
+       "Header"
+       "Navigation Menu" (full width)
+       "Content   Main Content   Content" (three columns)
+       "Footer"
+    */
+    .page-grid {
+      max-width: 1100px;
+      width: 100%;
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 1px solid #e0e7ef;
+
+      /* grid definition */
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;  /* left content, main (wider), right content */
+      grid-template-rows: auto auto 1fr auto;  /* header, nav, content row, footer */
+      gap: 1.5rem;
+      grid-template-areas: 
+        "header     header     header"
+        "nav        nav        nav"
+        "content    main       content2"   /* content2 = right "Content" column */
+        "footer     footer     footer";
+    }
+
+    /* style all grid items consistently */
+    .page-grid > * {
+      background: #ffffff;
+      padding: 1.8rem 1.2rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+      border: 2px solid #e9edf3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 550;
+      font-size: 1.3rem;
+      transition: 0.1s ease;
+    }
+
+    /* distinct pastel backgrounds for clarity (exactly as described: Header, Navigation, Content blocks, Footer) */
+    .header {
+      grid-area: header;
+      background: #d4e2fc;   /* soft blue */
+      color: #1e3a8a;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 1.5rem;
+      border-bottom: 4px solid #a0c0f0;
+    }
+
+    .nav {
+      grid-area: nav;
+      background: #f5e6d3;   /* warm sand */
+      color: #7b5e3b;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border: 2px dashed #ccb193;
+    }
+
+    .content-left {
+      grid-area: content;
+      background: #f9dcdc;   /* light rose */
+      color: #a13e3e;
+      font-size: 1.4rem;
+    }
+
+    .main-content {
+      grid-area: main;
+      background: #dff1dd;   /* mint */
+      color: #1e5f3e;
+      font-size: 1.7rem;
+      font-weight: 600;
+      border: 3px solid #b0dbb0;
+    }
+
+    .content-right {
+      grid-area: content2;
+      background: #f9dcdc;   /* same light rose as left, to show symmetry */
+      color: #a13e3e;
+      font-size: 1.4rem;
+    }
+
+    .footer {
+      grid-area: footer;
+      background: #d6d3d0;   /* greyish taupe */
+      color: #2e2c2a;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-top: 4px solid #b1aaa2;
+      padding: 1.5rem;
+    }
+
+    /* make the "Navigation Menu" text more descriptive */
+    .nav::before {
+      content: "☰ ";
+      font-size: 2rem;
+      font-weight: 300;
+      margin-right: 8px;
+      line-height: 1;
+    }
+
+    /* tiny responsive: stack on narrow screens */
+    @media (max-width: 650px) {
+      .page-grid {
+        grid-template-areas: 
+          "header"
+          "nav"
+          "content"
+          "main"
+          "content2"
+          "footer";
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.2rem;
+      }
+
+      .page-grid > * {
+        font-size: 1.3rem;
+        padding: 1.5rem 0.8rem;
+      }
+
+      .header { font-size: 1.8rem; }
+      .nav { justify-content: flex-start; padding-left: 2rem; }
+      .nav::before { content: "☰ "; }
+      .main-content { font-size: 1.5rem; }
+    }
+
+    /* optional: small touch for the three content blocks */
+    .content-left::before,
+    .content-right::before {
+      content: "• ";
+      font-size: 2rem;
+      line-height: 1;
+      margin-right: 5px;
+      opacity: 0.7;
+    }
+
+    /* preserve symmetry: left and right have bullet; main has no bullet */
+    .main-content::before {
+      content: none;
+    }
+
+    /* hover effect (makes it snappy) */
+    .page-grid > *:hover {
+      border-color: #8b9ab0;
+      box-shadow: 0 10px 20px -8px rgba(0,0,0,0.15);
+      transform: scale(1.002);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-grid">
+    <!-- header -->
+    <div class="header">Header</div>
+
+    <!-- navigation menu -->
+    <div class="nav">Navigation Menu</div>
+
+    <!-- left content -->
+    <div class="content-left">Content</div>
+
+    <!-- main content (wider column) -->
+    <div class="main-content">Main Content</div>
+
+    <!-- right content -->
+    <div class="content-right">Content</div>
+
+    <!-- footer -->
+    <div class="footer">Footer</div>
+  </div>
+</body>
+</html>
