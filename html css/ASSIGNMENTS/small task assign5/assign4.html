@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f4f4f4;
+  font-family:Arial;
+}
+
+.form-box{
+  background:#fff;
+  padding:30px;
+  width:300px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.form-box h2{
+  text-align:center;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  background:#333;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#00bcd4;
+}
+
+.forgot{
+  display:block;
+  text-align:center;
+  margin-top:10px;
+  text-decoration:none;
+  color:#007bff;
+}
+
+.forgot:hover{
+  text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-box">
+  <h2>Login</h2>
+
+  <input type="email" placeholder="Enter Email">
+  <input type="password" placeholder="Enter Password">
+
+  <button>Login</button>
+
+  <!-- Proper link -->
+  <a href="forgot.html" class="forgot">Forgot Password?</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  background:#333;
+  padding:15px;
+  color:white;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+}
+
+.nav-links a:hover{
+  color:#00bcd4;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .navbar{
+    flex-direction:column;
+  }
+  .nav-links{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div>Logo</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+</body>
+</html>

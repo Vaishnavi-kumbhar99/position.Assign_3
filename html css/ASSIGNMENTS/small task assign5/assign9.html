@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Progress Bars</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #eee;
+  padding: 50px;
+}
+
+.container {
+  width: 400px;
+  margin: auto;
+}
+
+.bar {
+  margin-bottom: 20px;
+}
+
+.progress {
+  background: #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 20px;
+  border-radius: 20px;
+  animation: load 2s ease-in-out;
+}
+
+.html {
+  width: 80%;
+  background: #e44d26;
+}
+
+.css {
+  width: 70%;
+  background: #264de4;
+}
+
+.js {
+  width: 60%;
+  background: hwb(52 31% 6%);
+}
+
+@keyframes load {
+  from {
+    width: 0;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="bar">
+    <p>HTML - 80%</p>
+    <div class="progress"><div class="html"></div></div>
+  </div>
+
+  <div class="bar">
+    <p>CSS - 70%</p>
+    <div class="progress"><div class="css"></div></div>
+  </div>
+
+  <div class="bar">
+    <p>JavaScript - 60%</p>
+    <div class="progress"><div class="js"></div></div>
+  </div>
+</div>
+
+</body>
+</html>

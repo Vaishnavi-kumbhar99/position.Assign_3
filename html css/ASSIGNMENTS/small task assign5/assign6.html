@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonial Section</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    padding: 40px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.stars {
+    color: gold;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="testimonial-container">
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg">
+        <h3>vinay kumbhar</h3>
+        <p>Very good service. I really liked the design!</p>
+        <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/2.jpg">
+        <h3>Pooja Patil</h3>
+        <p>Amazing experience. Highly recommended.</p>
+        <div class="stars">★★★★☆</div>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/3.jpg">
+        <h3>Amit rupnar</h3>
+        <p>Clean UI and easy to use.</p>
+        <div class="stars">★★★★★</div>
+    </div>
+
+</div>
+
+</body>
+</html>
